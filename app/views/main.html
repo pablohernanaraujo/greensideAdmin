@@ -1,0 +1,85 @@
+<form
+  name="FormularioProducto"
+  novalidate
+>
+  <div class="form-group">
+    <label for="titulo">Nombre del Producto</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      id="titulo" 
+      placeholder="Nombre"
+      ng-model="producto.nombre"
+      required />
+  </div>
+  <div class="form-group">
+    <label for="sabor">Sabor del Producto</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      id="sabor" 
+      placeholder="Sabor"
+      ng-model="producto.sabor"
+      required />
+  </div>
+  <div class="form-group">
+    <label for="nutrientes">Nutrientes del Producto</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      id="nutrientes" 
+      placeholder="Nutrientes"
+      ng-model="producto.nutrientes"
+      required />
+  </div>
+  <div class="form-group">
+    <label for="descripcion">Descripción del Producto</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      id="descripcion" 
+      placeholder="Descripción"
+      ng-model="producto.descripcion"
+      required />
+  </div>
+  <div class="form-group">
+    <label class="control-label">Logo 80x80</label>
+    <input 
+      type="file" 
+      id="logo" 
+      name="logo" 
+      ng-file-model="producto.logo"  
+      accept="image/*"
+      required />
+  </div>
+  <div class="form-group">
+    <label class="control-label">Imagen 400x500</label>
+    <input 
+      type="file" 
+      id="imagen" 
+      name="imagen" 
+      ng-file-model="producto.imagen"  
+      accept="image/*"
+      required />
+  </div>
+
+  <div class="form-group">
+    <div class="text-center">
+      <button 
+        class="btn btn-primary btn-block" 
+        ng-disabled="FormularioProducto.$invalid"
+        ng-click="prod(producto)"
+      >
+        Guardar Producto
+      </button>
+    </div>
+  </div>
+  <div class="form-group">
+    <div ng-show="guardando" class="text-center">
+      Guardando...
+    </div>
+    <div ng-show="message" class="text-center">
+      {{message}}
+    </div>
+  </div>
+</form>

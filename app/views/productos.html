@@ -1,0 +1,10 @@
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="producto in prdts">
+  	<h3>{{producto.nombre}}</h3>
+  	<p>{{producto.sabor}}</p>
+  	<p>{{producto.nutrientes}}</p>
+  	<p>{{producto.descripcion}}</p>
+  	<img ng-src="{{producto.logo.data}}" width="80" alt="">
+  	<img ng-src="{{producto.imagen.data}}" width="400" alt="">
+  </li>
+</ul>
